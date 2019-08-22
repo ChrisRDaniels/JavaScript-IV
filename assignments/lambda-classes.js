@@ -1,20 +1,22 @@
+
+
 class Person {
     constructor(attributes){
         this.name = attributes.name,
         this.age = attributes.age,
         this.location = attributes.location
     }
-    speak(){
-        return `Hello, my name is ${this.name}, I am from ${this.location}.`
-    }
+        speak(){
+            return `Hello, my name is ${this.name}, I am from ${this.location}.`
+        }
 }
 
 class Instructor extends Person {
-    constuctor(unique){
+    constructor(unique){
         super(unique);
-        this.specialty = unique.specialty,
-        this.favLanguage = unique.favLanguage,
-        this.catchPhrase = unique.catchPhrase
+        this.specialty = unique.specialty;
+        this.favLanguage = unique.favLanguage;
+        this.catchPhrase = unique.catchPhrase;
         this.subject = unique.subject
     }
         demo(subject){
@@ -23,24 +25,26 @@ class Instructor extends Person {
         grade(student, subject){
             `${this.student.name} recieves a perfect score on ${this.subject}`
         }
-}
+};
 
 class Student extends Instructor {
-    constuctor(unique2){
+    constructor(unique2){
         super(unique2);
         this.className = unique.className,
-        this.favSubjects = unique.favSubjects,
+        this.favSubjects = unique.favSubjects
     }
-    listsSubjects(favSubjects){
-        console.log(`${this.favSubjects.length}`);
+        listsSubjects(favSubjects){
+        this.favSubjects.forEach(subject => {
+        console.log(subject);
+        })
     }
-    PRAssignment (subject){
-        console.log(`${this.student.name} has submitted a PR for ${this.subject}`)
-    }
-    sprintChallenge(){
-        console.log(`${this.student.name} has begun sprint challenge on ${this.subject}.`)
-    }
-}
+        PRAssignment (subject){
+            console.log(`${this.student.name} has submitted a PR for ${this.subject}`);
+        }
+        sprintChallenge(){
+            console.log(`${this.student.name} has begun sprint challenge on ${this.subject}.`)
+        }
+};
 
 
 
